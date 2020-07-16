@@ -1,3 +1,8 @@
+### Get Twidere
+
+- [Google Play](https://play.google.com/store/apps/details?id=org.mariotaku.twidere)
+- [Source Code](https://github.com/TwidereProject)
+
 ### Introduction
 
 Twidere is a mobile client app for Twitter and Mastdon.
