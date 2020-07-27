@@ -2,6 +2,8 @@
 
 [<img src="https://user-images.githubusercontent.com/2139261/87637037-2a95b280-c731-11ea-8028-b7773dacd6c9.png">](https://play.google.com/store/apps/details?id=org.mariotaku.twidere)
 
+Or get Twidere on [F-Droid](https://f-droid.org/packages/org.mariotaku.twidere/).
+
 [Source Code](https://github.com/TwidereProject) is available on GitHub.
 
 ### Introduction
