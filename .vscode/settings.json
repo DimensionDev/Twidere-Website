@@ -4,6 +4,15 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": true
   },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   // To read more from suggest box!
   "editor.suggestFontSize": 12,
   "css.validate": false,
