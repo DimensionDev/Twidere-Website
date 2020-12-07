@@ -1,0 +1,25 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  // To read more from suggest box!
+  "editor.suggestFontSize": 12,
+  "css.validate": false,
+  "stylelint.enable": true,
+  "i18n-ally.namespace": true,
+  "i18n-ally.displayLanguage": "en",
+  "i18n-ally.localesPaths": "public/locales",
+  "i18n-ally.annotations": true,
+  "i18n-ally.enabledFrameworks": ["react"],
+  "i18n-ally.keystyle": "flat",
+
+  "json.schemas": [
+    {
+      "fileMatch": ["/src/manifest.json"],
+      "url": "http://json.schemastore.org/chrome-manifest"
+    }
+  ],
+  "cSpell.words": ["Reificated"]
+}
