@@ -21,6 +21,7 @@ import HomeIcon from '@material-ui/icons/Home'
 import BookIcon from '@material-ui/icons/Book'
 import { TwidereLogo, TwidereTextIcon, VisionIcon } from './assets/logo'
 import classNames from 'classnames'
+import { withTranslation, TFunction } from 'react-i18next'
 
 const useStyles = makeStyles((theme) =>
     createStyles({
@@ -47,6 +48,9 @@ const useStyles = makeStyles((theme) =>
             width: '100%',
             maxWidth: 1396,
             color: '#fff',
+            [theme.breakpoints.down('md')]: {
+                height: 578,
+            },
         },
         mainMobile: {
             display: 'flex',
@@ -153,14 +157,14 @@ const useStyles = makeStyles((theme) =>
     }),
 )
 
-function HomePage() {
+function HomePage({ t }: { t: TFunction }) {
     const classes = useStyles()
     const theme = useTheme()
     const xsMatched = useMediaQuery(() => theme.breakpoints.down('sm'))
     const [open, setOpen] = useState(false)
 
     return (
-        <div className={'flex flex-col items-center ' + classes.root}>
+        <Box className={'flex flex-col items-center ' + classes.root}>
             <nav className={'flex items-center justify-between ' + classes.nav}>
                 <section className="flex items-center">
                     <TwidereLogo
@@ -235,7 +239,7 @@ function HomePage() {
             {xsMatched ? (
                 <main className={classes.mainMobile}>
                     <Typography className={classes.bannerTitle} variant="h3" component="h3">
-                        可⾃定义且开源的Twitter 客户端
+                        {t('banner_title')}
                     </Typography>
                     <div className="mb-2" />
                     <Typography className={classes.bannerIntro} variant="h6">
@@ -261,8 +265,14 @@ function HomePage() {
                     </section>
                 </main>
             )}
-        </div>
+            <Typography variant="body1" className="text-gray-400 pt-16">
+                Our Features
+            </Typography>
+            <Typography variant={xsMatched ? 'h5' : 'h4'} className="text-gray-800 pt-4">
+                Great Features Of Twidere X
+            </Typography>
+        </Box>
     )
 }
 
-export default HomePage
+export default withTranslation()(HomePage)
