@@ -4,10 +4,13 @@
   "private": true,
   "dependencies": {
     "@craco/craco": "^5.9.0",
+    "@material-ui/core": "^4.11.2",
+    "@material-ui/icons": "^4.11.2",
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
     "autoprefixer": "^9",
+    "classnames": "^2.2.6",
     "postcss": "^7",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -17,7 +20,8 @@
     "web-vitals": "^0.2.4"
   },
   "devDependencies": {
-    "prettier": "^2.1.2"    
+    "@types/classnames": "^2.2.11",
+    "prettier": "^2.1.2"
   },
   "scripts": {
     "start": "craco start",

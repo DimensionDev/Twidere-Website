@@ -9,7 +9,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  @apply p-12 bg-white;
+  @apply p-0 bg-white;
 }
 
 code {
