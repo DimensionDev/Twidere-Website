@@ -20,6 +20,7 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight'
 import HomeIcon from '@material-ui/icons/Home'
 import BookIcon from '@material-ui/icons/Book'
 import { TwidereLogo, TwidereTextIcon, VisionIcon } from './assets/logo'
+import { ImgSvg_1, ImgSvg_2 } from './assets/imgSvg'
 import classNames from 'classnames'
 import { withTranslation, TFunction } from 'react-i18next'
 
@@ -60,7 +61,8 @@ const useStyles = makeStyles((theme) =>
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'top center',
-            height: 720,
+            height: ({ screenWidth }: { screenWidth: number }) =>
+                screenWidth > 750 ? 1120 : (screenWidth / 750) * 1120,
             width: '100%',
             color: '#fff',
             padding: '3rem',
@@ -105,7 +107,7 @@ const useStyles = makeStyles((theme) =>
                 fontSize: 56,
             },
             [theme.breakpoints.down('sm')]: {
-                fontSize: 44,
+                fontSize: 34,
                 fontWeight: 'bolder',
             },
         },
@@ -154,14 +156,36 @@ const useStyles = makeStyles((theme) =>
             backgroundImage: `url('github.png')`,
             cursor: 'default',
         },
+        featureTitle: {
+            fontWeight: 600,
+            maxWidth: '340px',
+        },
+        featureText: {
+            fontSize: '1.3rem',
+            maxWidth: '420px',
+        },
+        featureBox: {
+            maxWidth: '90%',
+            marginBottom: theme.spacing(8),
+        },
+        futureWrapper: {
+            border: '4px solid #B1A6DC',
+            borderRadius: '1rem',
+            width: '100%',
+            padding: '1rem',
+        },
+        futureTitle: {
+            fontWeight: 500,
+        },
     }),
 )
 
 function HomePage({ t }: { t: TFunction }) {
-    const classes = useStyles()
     const theme = useTheme()
     const xsMatched = useMediaQuery(() => theme.breakpoints.down('sm'))
     const [open, setOpen] = useState(false)
+    const screenWidth = window.innerWidth
+    const classes = useStyles({ screenWidth })
 
     return (
         <Box className={'flex flex-col items-center ' + classes.root}>
@@ -268,9 +292,77 @@ function HomePage({ t }: { t: TFunction }) {
             <Typography variant="body1" className="text-gray-400 pt-16">
                 Our Features
             </Typography>
-            <Typography variant={xsMatched ? 'h5' : 'h4'} className="text-gray-800 pt-4">
+            <Typography variant={xsMatched ? 'h5' : 'h4'} className="text-gray-800 pt-4 pb-16">
                 Great Features Of Twidere X
             </Typography>
+            <section className="flex justify-center items-center flex-wrap">
+                <ImgSvg_1
+                    className="max-w-full"
+                    width={screenWidth > 722 ? 722 : screenWidth}
+                    height={screenWidth > 722 ? 722 : (720 * screenWidth) / 722}
+                />
+                <Box className={classes.featureBox}>
+                    <Typography
+                        variant={xsMatched ? 'h5' : 'h4'}
+                        className={'text-gray-800 pt-4 ' + classes.featureTitle}>
+                        可定制的主界⾯
+                    </Typography>
+                    <Typography variant="body1" className={'text-gray-800 pt-4 ' + classes.featureText}>
+                        Twidere X 主界⾯的标签⻚可以根据需要进⾏定制，将不必要的标签⻚去除，让界⾯适合⾃⼰并保持简洁。
+                    </Typography>
+                </Box>
+            </section>
+            <section className="flex justify-center items-center flex-wrap-reverse">
+                <Box className={classes.featureBox}>
+                    <Typography
+                        variant={xsMatched ? 'h5' : 'h4'}
+                        className={'text-gray-800 pt-4 ' + classes.featureTitle}>
+                        同⼀时间线上查看多帐号消息
+                    </Typography>
+                    <Typography variant="body1" className={'text-gray-800 pt-4 ' + classes.featureText}>
+                        Twidere X 完美⽀持多帐号切换，Twidere X 也⽀持在同⼀时间线
+                        上不切换帐号就能查看多个帐号时间轴消息，省去繁琐的账户切换。
+                    </Typography>
+                </Box>
+                <ImgSvg_2
+                    width={screenWidth > 698 ? 698 : screenWidth}
+                    height={screenWidth > 698 ? 698 : (608 * screenWidth) / 698}
+                />
+            </section>
+            <section className="flex justify-center items-center flex-wrap">
+                <ImgSvg_1
+                    width={screenWidth > 722 ? 722 : screenWidth}
+                    height={screenWidth > 722 ? 720 : (720 * screenWidth) / 722}
+                />
+                <Box className={classes.featureBox}>
+                    <Typography
+                        variant={xsMatched ? 'h5' : 'h4'}
+                        className={'text-gray-800 pt-4 ' + classes.featureTitle}>
+                        ⾼度⼈性化的⾃定义设置
+                    </Typography>
+                    <Typography variant="body1" className={'text-gray-800 pt-4 ' + classes.featureText}>
+                        除了字体以及图片的自由设置，Twidere X
+                        还能自定义按钮摆放，主题颜色及发送方式（例如：回车发送消息）
+                    </Typography>
+                </Box>
+            </section>
+            <section className={classes.futureWrapper}>
+                <Box>
+                    <Typography
+                        variant={xsMatched ? 'h1' : 'h2'}
+                        component="h1"
+                        className={'text-gray-800 pt-4 ' + classes.futureTitle}>
+                        Coming Soon
+                    </Typography>
+                    <Typography variant="body1" className={'text-gray-800 pt-4 '}>
+                        更多功能还在开发，
+                    </Typography>
+                    <Typography variant="body1" className={'text-gray-800'}>
+                        访问我们的Blog查看我们的计划和很棒的内容！
+                    </Typography>
+                </Box>
+                <Box></Box>
+            </section>
         </Box>
     )
 }
