@@ -14,20 +14,31 @@ import {
     ListItem,
     ListItemIcon,
     ListItemText,
+    Menu,
+    MenuItem,
 } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
 import ChevronRightIcon from '@material-ui/icons/ChevronRight'
 import HomeIcon from '@material-ui/icons/Home'
 import BookIcon from '@material-ui/icons/Book'
-import { TwidereLogo, TwidereTextIcon, VisionIcon } from './assets/logo'
-import { ImgSvg_1, ImgSvg_2 } from './assets/imgSvg'
+import {
+    TwidereLogo,
+    TwidereTextIcon,
+    VisionIcon,
+    MailIcon,
+    GithubIcon,
+    TwitterIcon,
+    SujitechIcon,
+    ArrowDropDownIcon,
+} from './assets/iconSvg'
+import { ImgSvg_1, ImgSvg_2, ImgSvg_3 } from './assets/imgSvg'
 import classNames from 'classnames'
 import { withTranslation, TFunction } from 'react-i18next'
 
 const useStyles = makeStyles((theme) =>
     createStyles({
         root: {
-            padding: '3rem',
+            padding: '3rem 3rem 1rem 3rem',
             [theme.breakpoints.down('sm')]: {
                 padding: 0,
             },
@@ -169,13 +180,73 @@ const useStyles = makeStyles((theme) =>
             marginBottom: theme.spacing(8),
         },
         futureWrapper: {
+            display: 'flex',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
             border: '4px solid #B1A6DC',
             borderRadius: '1rem',
-            width: '100%',
+            width: '80%',
+            [theme.breakpoints.down('md')]: {
+                width: '90%',
+                justifyContent: 'center',
+            },
+            maxWidth: 1142,
             padding: '1rem',
         },
         futureTitle: {
             fontWeight: 500,
+        },
+        futureIntro: {
+            fontSize: '1.3rem',
+        },
+        futureButton: {
+            border: '1px solid #F7B643',
+            borderRadius: 13,
+            width: 170,
+            height: 45,
+            background: '#F7B643',
+            color: '#fff',
+            marginLeft: '2.5rem',
+            marginTop: '2rem',
+            boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+            '&:hover': {
+                backgroundColor: '#F7B643',
+                color: '#FFF',
+                boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+            },
+            [theme.breakpoints.down('sm')]: {
+                marginLeft: 0,
+                marginTop: '1rem',
+            },
+        },
+        contactWrapper: {
+            display: 'flex',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            width: '80%',
+            [theme.breakpoints.down('md')]: {
+                width: '90%',
+            },
+            maxWidth: 1142,
+        },
+        contactBox: {
+            width: 170,
+            marginTop: '5rem',
+            [theme.breakpoints.down('sm')]: {
+                marginTop: '2rem',
+            },
+        },
+        contactText: {
+            letterSpacing: 3,
+        },
+        footer: {
+            width: '80%',
+            [theme.breakpoints.down('md')]: {
+                width: '90%',
+            },
+        },
+        arrowDropDownIcon: {
+            fontSize: '28px !important',
         },
     }),
 )
@@ -184,6 +255,7 @@ function HomePage({ t }: { t: TFunction }) {
     const theme = useTheme()
     const xsMatched = useMediaQuery(() => theme.breakpoints.down('sm'))
     const [open, setOpen] = useState(false)
+    const [anchorEl, setAnchorEl] = useState<(EventTarget & HTMLButtonElement) | null>(null)
     const screenWidth = window.innerWidth
     const classes = useStyles({ screenWidth })
 
@@ -347,22 +419,83 @@ function HomePage({ t }: { t: TFunction }) {
                 </Box>
             </section>
             <section className={classes.futureWrapper}>
-                <Box>
+                <Box className={xsMatched ? 'mb-5' : 'mb-10'}>
                     <Typography
-                        variant={xsMatched ? 'h1' : 'h2'}
+                        variant={xsMatched ? 'h4' : 'h2'}
                         component="h1"
-                        className={'text-gray-800 pt-4 ' + classes.futureTitle}>
+                        className={`text-gray-800 ${xsMatched ? 'pl-6 pt-4' : 'pl-10 pt-8'} ` + classes.futureTitle}>
                         Coming Soon
                     </Typography>
-                    <Typography variant="body1" className={'text-gray-800 pt-4 '}>
+                    <Typography
+                        variant="body1"
+                        className={`text-gray-800 pt-6 ${xsMatched ? 'pl-6' : 'pl-10'} ` + classes.futureIntro}>
                         更多功能还在开发，
                     </Typography>
-                    <Typography variant="body1" className={'text-gray-800'}>
+                    <Typography
+                        variant="body1"
+                        className={`text-gray-800 ${xsMatched ? 'pl-6' : 'pl-10'} ` + classes.futureIntro}>
                         访问我们的Blog查看我们的计划和很棒的内容！
                     </Typography>
+                    {xsMatched ? null : (
+                        <Button className={classes.futureButton} variant="contained">
+                            View Blog
+                        </Button>
+                    )}
                 </Box>
-                <Box></Box>
+                <Box className="max-w-full flex flex-col items-center">
+                    <ImgSvg_3
+                        className="max-w-full"
+                        height={screenWidth > 407 * 0.8 ? 356 * 0.8 : (356 * screenWidth) / (407 * 0.8)}
+                    />
+                    {xsMatched ? (
+                        <Button className={classes.futureButton} variant="contained">
+                            View Blog
+                        </Button>
+                    ) : null}
+                </Box>
             </section>
+            <section className={classes.contactWrapper}>
+                <Box className={'mr-12 ' + classes.contactBox}>
+                    <Typography variant="body1" className={'text-gray-400 ' + classes.contactText}>
+                        联系我们
+                    </Typography>
+                    <div className="flex justify-between mt-6">
+                        <MailIcon className="cursor-pointer" />
+                        <GithubIcon className="cursor-pointer" />
+                        <TwitterIcon className="cursor-pointer" />
+                    </div>
+                </Box>
+                <Box className={classes.contactBox}>
+                    <Typography variant="body1" className={'text-gray-400 ' + classes.contactText}>
+                        赞助商
+                    </Typography>
+                    <SujitechIcon className="mt-6" />
+                </Box>
+            </section>
+            <footer
+                className={
+                    'flex justify-between items-center flex-wrap mt-12 py-6 border-gray-300 border-t border-solid ' +
+                    classes.footer
+                }>
+                <Button variant="text" className="mr-16" onClick={(e) => setAnchorEl(e.currentTarget)}>
+                    <Box className="flex items-baseline">
+                        <span>简体中文</span>
+                        <ArrowDropDownIcon className="ml-1" />
+                    </Box>
+                </Button>
+                <Menu
+                    id="simple-menu"
+                    anchorEl={anchorEl}
+                    keepMounted
+                    open={Boolean(anchorEl)}
+                    onClose={() => setAnchorEl(null)}>
+                    <MenuItem onClick={() => setAnchorEl(null)}>简体中文</MenuItem>
+                    <MenuItem onClick={() => setAnchorEl(null)}>English</MenuItem>
+                </Menu>
+                <Typography variant="body1" className={'text-gray-400 pt-2 pl-2 '}>
+                    Twidere Website is maintained by DimensionDev.
+                </Typography>
+            </footer>
         </Box>
     )
 }
