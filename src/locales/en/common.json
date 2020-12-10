@@ -1,3 +1,25 @@
 {
-    "banner_title": "Customizable & Open-sourced Client for Twitter"
+    "banner_title": "Twiderre X Fun, Free, Open source",
+    "banner_intro": "Cross-Platform, Customizable, Clean client with plentiful functions",
+    "feature_title": "Our Features",
+    "feature_intro": "Great Features Of Twidere X",
+    "feature_one_title": "Perfect Tweets Experience",
+    "feature_one_intro": "Twidere X has perfect Twitter browsing experience. Supports platform crossing, viewing tweets and replies by timeline, sending tweets with locations and searching for tweets, media and users and more...",
+    "feature_two_title": "Personalized UI",
+    "feature_two_intro": "Plentiful customization functions customize your exclusive interface. The dark mode is automatically activated at night, and each tab can be displayed on demand. The controllable text size and theme color allow you to customize the unique Twidere X.",
+    "feature_three_title": "Multi-accounts Management",
+    "feature_three_intro": "Have multiple accounts? No problem! Twidere X supports multi-accounts management, and ensure each account will not interfere with each other.",
+    "link_home": "HOME",
+    "link_blog": "BLOG",
+    "link_view_blog": "View Blog",
+    "link_get_twidere": "Get Twidere X",
+    "coming_soon": "Coming Soon",
+    "more_under_dev": "More features are still under development.",
+    "more_within_blog": "Visit our Blog to check out our plans and contents!",
+    "contact_us": "Contact us",
+    "sponsor": "SPONSOR",
+    "language": "ENGLISH",
+    "language_chinese": "简体中文",
+    "language_english": "ENGLISH",
+    "maintained_by": "Twidere Website is maintained by DimensionDev."
 }

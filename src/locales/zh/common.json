@@ -1,3 +1,25 @@
 {
-    "banner_title": "可⾃定义且开源的Twitter 客户端"
+    "banner_title": "Twiderre X 有趣，自由，开源",
+    "banner_intro": "跨平台，可⾃定义，兼具丰富功能",
+    "feature_title": "主要特性",
+    "feature_intro": "Twidere X 的主要特性",
+    "feature_one_title": "完善的浏览体验",
+    "feature_one_intro": "Twidere X 拥有完善的 Twitter 体验。按时间线查看推文和回复，发送带有位置的推文，搜索等。",
+    "feature_two_title": "个性化界面",
+    "feature_two_intro": "丰富的自定义功能定制你的专属界面。入夜自动启用黑暗模式，每个标签页都可按需显示，可控的文字尺寸、主题颜色让你定制独一无二的 Twidere X。",
+    "feature_three_title": "多账户管理",
+    "feature_three_intro": "拥有多个身份？没问题！Twidere X 支持配置多个账户，确保多个身份互不干扰。",
+    "link_home": "HOME",
+    "link_blog": "BLOG",
+    "link_view_blog": "View Blog",
+    "link_get_twidere": "Get Twidere X",
+    "coming_soon": "Coming Soon",
+    "more_under_dev": "更多功能还在开发，",
+    "more_within_blog": "访问我们的Blog查看我们的计划和很棒的内容！",
+    "contact_us": "联系我们",
+    "sponsor": "赞助商",
+    "language": "简体中文",
+    "language_chinese": "简体中文",
+    "language_english": "ENGLISH",
+    "maintained_by": "Twidere Website is maintained by DimensionDev."
 }
