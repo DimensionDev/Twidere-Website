@@ -140,6 +140,10 @@ const useStyles = makeStyles((theme) =>
                 marginTop: '2rem',
                 marginBottom: '0.5rem',
             },
+            [theme.breakpoints.down('sm')]: {
+                marginTop: '1rem',
+                marginBottom: '0rem',
+            },
         },
         download: {
             backgroundSize: 'contain',
@@ -163,6 +167,7 @@ const useStyles = makeStyles((theme) =>
         },
         appStore: {
             backgroundImage: `url('app-store.png')`,
+            backgroundPosition: 'top left',
         },
         github: {
             backgroundImage: `url('github.png')`,
@@ -296,18 +301,16 @@ function HomePage({ t }: { t: TFunction }) {
                         height={xsMatched ? 27 : undefined}
                     />
                 </section>
-                <section className={`flex items-center justify-between w-96 ${xsMatched ? 'flex-row-reverse' : ''}`}>
+                <section className={`flex items-center justify-end w-96`}>
                     {xsMatched ? (
                         <IconButton color="inherit" aria-label="open drawer" edge="end" onClick={() => setOpen(!open)}>
                             <MenuIcon fontSize="large" />
                         </IconButton>
                     ) : (
                         <>
-                            <Typography className="cursor-pointer text-black-">{t('link_home')}</Typography>
+                            <Typography className="cursor-pointer">{t('link_home')}</Typography>
+                            <div className="mr-8" />
                             <Typography className="cursor-pointer">{t('link_blog')}</Typography>
-                            <Button color="primary" className={classes.button} variant="outlined">
-                                <span className="font-bold">{t('link_get_twidere')}</span>
-                            </Button>
                         </>
                     )}
                 </section>
@@ -337,10 +340,6 @@ function HomePage({ t }: { t: TFunction }) {
                         </ListItemIcon>
                         <ListItemText primary={'Blog'} />
                     </ListItem>
-
-                    <Button color="primary" className={classes.button} variant="outlined">
-                        <span className="font-bold">{t('link_get_twidere')}</span>
-                    </Button>
                 </List>
             </Drawer>
             {xsMatched ? (
@@ -352,6 +351,12 @@ function HomePage({ t }: { t: TFunction }) {
                     <Typography className={classes.bannerIntro} variant="h6">
                         {t('banner_intro')}
                     </Typography>
+                    <Box className={'flex flex-col mb-4 self-start ' + classes.downloadWrapper}>
+                        <div className={'mb-4 ' + classNames([classes.fDroid, classes.download])} />
+                        <div className={'mb-4 ' + classNames([classes.gPlay, classes.download])} />
+                        <div className={'mb-4 ' + classNames([classes.appStore, classes.download])} />
+                        <div className={classNames([classes.github, classes.download])} />
+                    </Box>
                 </main>
             ) : (
                 <main className={classes.main}>
