@@ -352,9 +352,14 @@ function HomePage({ t }: { t: TFunction }) {
                         {t('banner_intro')}
                     </Typography>
                     <Box className={'flex flex-col mb-4 self-start ' + classes.downloadWrapper}>
-                        <div className={'mb-4 ' + classNames([classes.fDroid, classes.download])} />
-                        <div className={'mb-4 ' + classNames([classes.gPlay, classes.download])} />
-                        <div className={'mb-4 ' + classNames([classes.appStore, classes.download])} />
+                        <a className={'mb-4 ' + classNames([classes.fDroid, classes.download])} />
+                        <a
+                            className={'mb-4 ' + classNames([classes.gPlay, classes.download])}
+                            href="https://play.google.com/store/apps/details?id=com.twidere.twiderex"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        />
+                        <a className={'mb-4 ' + classNames([classes.appStore, classes.download])} />
                         <div className={classNames([classes.github, classes.download])} />
                     </Box>
                 </main>
@@ -369,9 +374,14 @@ function HomePage({ t }: { t: TFunction }) {
                             {t('banner_intro')}
                         </Typography>
                         <Box className={'flex mb-4 ' + classes.downloadWrapper}>
-                            <div className={classNames([classes.fDroid, classes.download])} />
-                            <div className={classNames([classes.gPlay, classes.download])} />
-                            <div className={classNames([classes.appStore, classes.download])} />
+                            <a className={classNames([classes.fDroid, classes.download])} />
+                            <a
+                                className={classNames([classes.gPlay, classes.download])}
+                                href="https://play.google.com/store/apps/details?id=com.twidere.twiderex"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            />
+                            <a className={classNames([classes.appStore, classes.download])} />
                         </Box>
                         <div className={classNames([classes.github, classes.download])} />
                     </section>
@@ -474,9 +484,15 @@ function HomePage({ t }: { t: TFunction }) {
                         {t('contact_us')}
                     </Typography>
                     <div className="flex justify-between mt-6">
-                        <MailIcon className="cursor-pointer" />
-                        <GithubIcon className="cursor-pointer" />
-                        <TwitterIcon className="cursor-pointer" />
+                        <IconButton href="mailto:frog@dimension.im" target="_blank" rel="noopener noreferrer">
+                            <MailIcon className="cursor-pointer" />
+                        </IconButton>
+                        <IconButton className="focus:outline-none">
+                            <GithubIcon className="cursor-pointer" />
+                        </IconButton>
+                        <IconButton href="https://twitter.com/TwidereProject" target="_blank" rel="noopener noreferrer">
+                            <TwitterIcon className="cursor-pointer" />
+                        </IconButton>
                     </div>
                 </Box>
                 <Box className={classes.contactBox}>
