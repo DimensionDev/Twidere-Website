@@ -360,12 +360,7 @@ function HomePage({ t }: { t: TFunction }) {
                             rel="noopener noreferrer"
                         />
                         <a className={'mb-4 ' + classNames([classes.appStore, classes.download])} />
-                        <a
-                            href="https://github.com/TwidereProject"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={classNames([classes.github, classes.download])}
-                        />
+                        <div className={classNames([classes.github, classes.download])} />
                     </Box>
                 </main>
             ) : (
@@ -389,9 +384,7 @@ function HomePage({ t }: { t: TFunction }) {
                             />
                             <a className={classNames([classes.appStore, classes.download])} />
                         </Box>
-                        <a href="https://github.com/TwidereProject" target="_blank" rel="noopener noreferrer">
-                            <div className={classNames([classes.github, classes.download])} />
-                        </a>
+                        <div className={classNames([classes.github, classes.download])} />
                     </section>
                 </main>
             )}
@@ -495,7 +488,11 @@ function HomePage({ t }: { t: TFunction }) {
                         <IconButton href="mailto:frog@dimension.im" target="_blank" rel="noopener noreferrer">
                             <MailIcon className="cursor-pointer" />
                         </IconButton>
-                        <IconButton className="focus:outline-none">
+                        <IconButton
+                            className="focus:outline-none"
+                            href="https://github.com/TwidereProject"
+                            target="_blank"
+                            rel="noopener noreferrer">
                             <GithubIcon className="cursor-pointer" />
                         </IconButton>
                         <IconButton href="https://twitter.com/TwidereProject" target="_blank" rel="noopener noreferrer">
