@@ -171,7 +171,6 @@ const useStyles = makeStyles((theme) =>
         },
         github: {
             backgroundImage: `url('github.png')`,
-            cursor: 'default',
         },
         featureTitle: {
             fontWeight: 600,
@@ -345,7 +344,8 @@ function HomePage({ t }: { t: TFunction }) {
             {xsMatched ? (
                 <main className={classes.mainMobile}>
                     <Typography className={classes.bannerTitle} variant="h3" component="h3">
-                        {t('banner_title')}
+                        <p>{t('banner_title_a')}</p>
+                        <p>{t('banner_title_b')}</p>
                     </Typography>
                     <div className="mb-2" />
                     <Typography className={classes.bannerIntro} variant="h6">
@@ -360,14 +360,20 @@ function HomePage({ t }: { t: TFunction }) {
                             rel="noopener noreferrer"
                         />
                         <a className={'mb-4 ' + classNames([classes.appStore, classes.download])} />
-                        <div className={classNames([classes.github, classes.download])} />
+                        <a
+                            href="https://github.com/TwidereProject"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={classNames([classes.github, classes.download])}
+                        />
                     </Box>
                 </main>
             ) : (
                 <main className={classes.main}>
                     <section className={classes.banner}>
                         <Typography className={classes.bannerTitle} variant="h3" component="h3">
-                            {t('banner_title')}
+                            <p>{t('banner_title_a')}</p>
+                            <p>{t('banner_title_b')}</p>
                         </Typography>
                         <div className="mb-2" />
                         <Typography className={classes.bannerIntro} variant="body1">
@@ -383,7 +389,9 @@ function HomePage({ t }: { t: TFunction }) {
                             />
                             <a className={classNames([classes.appStore, classes.download])} />
                         </Box>
-                        <div className={classNames([classes.github, classes.download])} />
+                        <a href="https://github.com/TwidereProject" target="_blank" rel="noopener noreferrer">
+                            <div className={classNames([classes.github, classes.download])} />
+                        </a>
                     </section>
                 </main>
             )}
