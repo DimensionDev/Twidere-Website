@@ -108,15 +108,26 @@ const useStyles = makeStyles((theme) =>
             marginTop: '13rem',
             marginLeft: '7rem',
             [theme.breakpoints.down('md')]: {
-                width: 600,
+                width: 520,
                 marginTop: '8rem',
-                marginLeft: '5rem',
+                marginLeft: '3rem',
             },
         },
         bannerTitle: {
             fontSize: 72,
             [theme.breakpoints.down('md')]: {
                 fontSize: 56,
+            },
+            [theme.breakpoints.down('sm')]: {
+                fontSize: 34,
+                fontWeight: 'bolder',
+            },
+        },
+        bannerTitleDesktop: {
+            width: '100%',
+            [theme.breakpoints.down('md')]: {
+                width: '90%',
+                fontSize: 42,
             },
             [theme.breakpoints.down('sm')]: {
                 fontSize: 34,
@@ -366,9 +377,9 @@ function HomePage({ t }: { t: TFunction }) {
             ) : (
                 <main className={classes.main}>
                     <section className={classes.banner}>
-                        <Typography className={classes.bannerTitle} variant="h3" component="h3">
+                        <Typography className={classNames(classes.bannerTitle)} variant="h3" component="h3">
                             <p>{t('banner_title_a')}</p>
-                            <p>{t('banner_title_b')}</p>
+                            <p className={classes.bannerTitleDesktop}>{t('banner_title_b')}</p>
                         </Typography>
                         <div className="mb-2" />
                         <Typography className={classes.bannerIntro} variant="body1">
