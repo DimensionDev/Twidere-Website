@@ -1,9 +1,3 @@
-## Twidere
-
-## Mobile client for Twitter & Mastdon.
-
-[View on GitHub](https://github.com/DimensionDev/Twidere-Website) [Download .zip](https://github.com/DimensionDev/Twidere-Website/zipball/gh-pages) [Download .tar.gz](https://github.com/DimensionDev/Twidere-Website/tarball/gh-pages)
-
 ### Get Twidere
 
 [<img src="https://user-images.githubusercontent.com/2139261/87637037-2a95b280-c731-11ea-8028-b7773dacd6c9.png">](https://play.google.com/store/apps/details?id=org.mariotaku.twidere)
