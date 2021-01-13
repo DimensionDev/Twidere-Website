@@ -12,9 +12,10 @@ Twidere is a mobile client app for Twitter and Mastdon.
 
 ### New version
 
-We are now developing a whole new version of Twidere ,we would like to name it "Twidere-X " .
+Visit [x.twidere.com](https://x.twidere.com/) to learn more about our brand new version.
 
-Twidere-X will provide identical functions of both Android and IOS , and will be optimized for each platform .
+We are developing a whole new version of Twidere, we would like to name it " Twidere X ".
+Twidere X will provide identical functions of both Android and iOS, and will be optimized for each platform.
 
 Now our iOS version is open to testing, Please join [telegram group](https://t.me/twidere_x) to get information about join the test.
 
