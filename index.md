@@ -8,7 +8,7 @@ Or get Twidere on [F-Droid](https://f-droid.org/packages/org.mariotaku.twidere/)
 
 ### Introduction
 
-Twidere is a mobile client app for Twitter and Mastdon.
+Twidere is a mobile client app for Twitter and Mastodon.
 
 ### Authors and Contributors
 
